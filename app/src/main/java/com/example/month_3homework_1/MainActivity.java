@@ -33,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
         btnSend=findViewById(R.id.btn_exit);
     }
     private void btnClicer() {
-        etGmail.getText().toString();
-        etTheme.getText().toString();
-        etSms.getText().toString();
+        String gmail etGmail.getText().toString();
+        String theme etTheme.getText().toString();
+        String sms etSms.getText().toString();
 
         btnSend.setOnClickListener(view -> {
             Intent intent=new Intent(Intent.ACTION_GET_CONTENT  );
-            intent.putExtra(Intent.EXTRA_EMAIL,new String[]{String.valueOf(etGmail)});
-            intent.putExtra(Intent.EXTRA_SUBJECT, (CharSequence) etTheme);
-            intent.putExtra(Intent.EXTRA_TEXT, (CharSequence) etSms);
+            intent.putExtra(Intent.EXTRA_EMAIL,new String[]{String.valueOf(gmail)});
+            intent.putExtra(Intent.EXTRA_SUBJECT, (CharSequence) theme);
+            intent.putExtra(Intent.EXTRA_TEXT, (CharSequence) sms);
             intent.setType("message/rfc822");
             startActivity(Intent.createChooser(intent,"WYBERITE SOBSENIE"));
         });
