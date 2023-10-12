@@ -20,20 +20,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initView();
+        clliButton();
+    }
+    private void initView() {
         editTextTo = findViewById(R.id.text_gmail);
         editTextSubject = findViewById(R.id.text_theme);
         editTextMessage = findViewById(R.id.text_sms);
-
+    }
+    private void clliButton() {
         Button buttonSend = findViewById(R.id.btn_send);
-        buttonSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String to = editTextTo.getText().toString();
-                String subject = editTextSubject.getText().toString();
-                String message = editTextMessage.getText().toString();
-
-                sendEmail(to, subject, message);
-            }
+        buttonSend.setOnClickListener(v -> {
+            String to = editTextTo.getText().toString();
+            String subject = editTextSubject.getText().toString();
+            String message = editTextMessage.getText().toString();
+            sendEmail(to, subject, message);
         });
     }
 
@@ -52,4 +53,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
