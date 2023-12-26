@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(intent, "Send mail..."));
         } catch (android.content.ActivityNotFoundException ex) {
             // Обработка случая, когда нет приложения для отправки электронной почты
+            Toast.makeText(this,"The Email application is missing!",Toast.LENGH_SHORT).show()
         }
     }
 }
